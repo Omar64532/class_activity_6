@@ -33,7 +33,7 @@ void setupWindow() {
   }
 }
 
-/// Simplest possible model, with just one field.
+
 class Counter with ChangeNotifier {
   int value = 0;
 
@@ -71,7 +71,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Age Counter'), // Updated title
+        title: const Text('Age Counter'), 
       ),
       body: Center(
         child: Column(
@@ -80,7 +80,7 @@ class MyHomePage extends StatelessWidget {
             const Text('I am '),
             Consumer<Counter>(
               builder: (context, counter, child) => Text(
-                '${counter.value} years old', // Updated text
+                '${counter.value} years old', 
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
@@ -93,23 +93,23 @@ class MyHomePage extends StatelessWidget {
           FloatingActionButton(
             onPressed: () {
               var counter = context.read<Counter>();
-              counter.decrement(); // Call the decrement function
+              counter.decrement(); 
             },
             tooltip: 'Decrement',
-            child: const Icon(Icons.remove), // Decrement icon
+            child: const Icon(Icons.remove), 
           ),
-          const SizedBox(width: 10), // Space between buttons
+          const SizedBox(width: 10), 
           FloatingActionButton(
             onPressed: () {
               var counter = context.read<Counter>();
-              counter.increment(); // Call the increment function
+              counter.increment(); 
             },
             tooltip: 'Increment',
-            child: const Icon(Icons.add), // Increment icon
+            child: const Icon(Icons.add), 
           ),
         ],
       ),
-      backgroundColor: Colors.blue, // Set background color to blue
+      backgroundColor: Colors.blue, 
     );
   }
 }
